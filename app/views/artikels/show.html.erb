@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <% if @artikel.thumbnail.attached? %>
+    <img src="<%= url_for(@artikel.thumbnail)  %>">
+  <% end %>
+</p>
+
+<p>
+  <strong>Judul:</strong>
+  <%= @artikel.judul %>
+</p>
+
+<p>
+  <strong>Konten:</strong>
+  <%= @artikel.content %>
+</p>
+
+<%= link_to 'Edit', edit_artikel_path(@artikel) %> |
+<%= link_to 'Back', artikels_path %>
