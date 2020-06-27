@@ -142,22 +142,7 @@
 	padding: 0 0 2em 0;
 }
 
-.pricing--rabten .pricing__action {
-	width: 60%
-
-	font-weight: bold;
-	text-transform: uppercase;;
-	letter-spacing: 1px;
-	margin-top: auto;
-	padding: 1.4em 1em;
-	color: rgba(0,0,0,.8);
-	border-radius: 1px;
-	border: 2px solid rgba(0,0,0,.8);
-	/*background: #2D6CDF;*/
-	-webkit-transition: background-color 0.3s;
-	transition: background-color 0.3s;
-	font-size: 12px;
-}
+/**/
 
 .pricing--rabten .pricing__action:hover,
 .pricing--rabten .pricing__action:focus {
