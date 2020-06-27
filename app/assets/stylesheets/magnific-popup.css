@@ -46,7 +46,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  margin: 0px auto;
+  margin: 0px;
   text-align: left;
   z-index: 1045; }
 
@@ -248,7 +248,7 @@ img.mfp-img {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px 0 40px;
-  margin: 0px auto; }
+  margin: 0px; }
 
 /* The shadow behind the image */
 .mfp-figure {

@@ -429,7 +429,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .services {
   width: 95%;
-  margin: 0px auto;
+  margin: 0px;
   margin-bottom: 40px;
   position: relative;
   -webkit-transition: 0.3s;
@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: rgba(0, 0, 0, 0.04);
   display: table;
   text-align: center;
-  margin: 0px auto;
+  margin: 0px;
   margin-bottom: 30px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -688,7 +688,7 @@ h1, h2, h3, h4, h5, h6, figure {
   content: '';
   width: 50px;
   height: 1px;
-  margin: 0px auto;
+  margin: 0px;
   background: rgba(0, 0, 0, 0.08);
 }
 .fh5co-heading p {
@@ -733,7 +733,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  margin: 0px auto;
+  margin: 0px;
   margin-bottom: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1420,7 +1420,7 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 21;
   padding: 6px 0 0 0;
   display: block;
-  margin: 0px auto;
+  margin: 0px;
   display: none;
   height: 44px;
   width: 44px;
