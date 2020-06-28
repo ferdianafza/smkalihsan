@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'teacher/index'
   get 'homes/index'
   get "/teacher/index" => "teacher/index"
+  # get "/artikels" => "artikels/index"
   root to: 'homes#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
