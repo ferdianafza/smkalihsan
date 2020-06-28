@@ -1,20 +1,32 @@
+<style>
+  @media only screen and (max-device-width: 480px) {
+    .banner {
+      width: 100%;
+    }
+  }
+  .banner {
+    width: 100%;
+  }
+</style>
 <p id="notice"><%= notice %></p>
 
 <p>
   <% if @artikel.thumbnail.attached? %>
-    <img src="<%= url_for(@artikel.thumbnail)  %>">
+    <img class="banner" src="<%= url_for(@artikel.thumbnail)  %>" >
   <% end %>
 </p>
 
 <p>
-  <strong>Judul:</strong>
-  <%= @artikel.judul %>
+  <h3>
+    <strong>
+      <%= @artikel.judul %>
+    </strong>
+  </h3>
 </p>
 
 <p>
-  <strong>Konten:</strong>
-  <%= @artikel.content %>
-</p>
+  <h4>
 
-<%= link_to 'Edit', edit_artikel_path(@artikel) %> |
-<%= link_to 'Back', artikels_path %>
+  <%= @artikel.content %>
+  </h4>
+</p>
