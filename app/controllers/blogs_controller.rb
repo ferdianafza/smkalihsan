@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blogs = Blog.all.order(created_at: :desc).limit(3)
   end
 
   # GET /blogs/new
