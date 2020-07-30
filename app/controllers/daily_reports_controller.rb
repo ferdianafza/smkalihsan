@@ -39,10 +39,10 @@ class DailyReportsController < ApplicationController
 
     respond_to do |format|
       if @daily_report.save
-        format.html { redirect_to @daily_report, notice: 'Daily report was successfully created.' }
+        format.html { redirect_to '/daily_reports/new', notice: 'Laporan Harian Berhasil dikirim.' }
         format.json { render :show, status: :created, location: @daily_report }
       else
-        format.html { render :new }
+        format.html { redirect_to '/daily_reports/new', notice: 'Laporan Harian Gagal Dikirim, Mohon Periksa Bagian Yang Belum Diisi.' }
         format.json { render json: @daily_report.errors, status: :unprocessable_entity }
       end
     end

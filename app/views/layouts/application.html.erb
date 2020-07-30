@@ -123,7 +123,7 @@
   <a href="/daily_reports/new" class="link-link" >Laporan Harian</a>
   <a href="/blogs" class="link-link" >Blog</a>
   <a href="/artikels" class="link-link" >Artikel</a>
-  <a href="/profil" class="link-link" >Profil</a>
+  <a href="/homes/profil" class="link-link" >Profil</a>
   <%unless current_user.blank? -%>
     <!-- <a href="/profil" class="link-link" >Logout</a> -->
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'link-link'   %>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :artikels
   get 'homes/index'
   # get "/artikels" => "artikels/index"
+  get "/homes/profil" => "/homes/show"
   root to: 'homes#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
