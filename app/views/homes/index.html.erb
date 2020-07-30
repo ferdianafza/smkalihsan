@@ -1,31 +1,23 @@
-<!-- <div class="fh5co-loader"></div> -->
-  <div id="page">
-
-
-  <!-- <aside id=""style="background-image: url(<%= asset_path 'sosialisasi.jpg' %>);" width="700">
-    <div class="">
-      <ul class="slides">
-        <li>
-          <div class="overlay-gradient"></div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2 text-center slider-text">
-                <div class="slider-text-inner">
-                  <h1>The Roots of Education are Bitter, But the Fruit is Sweet</h1>
-                  <h2>Brought to you by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2>
-                  <p><a class="btn btn-primary btn-lg" href="#">Start Learning Now!</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        </ul>
-      </div>
-  </aside> -->
-
-  <!-- <div style="background-image: url(<%= asset_path 'sosialisasi.jpg' %>);">
-    <img src="<%= asset_path 'sosialisasi.jpg' %>">
-  </div> -->
+ <style>
+   #rpl {
+    text-decoration: none;
+   }
+   #mm {
+    text-decoration: none;
+   }
+   #art {
+    text-decoration: none;
+   }
+   #judul {
+    text-decoration: none;
+   }
+   #tmbl-daftar {
+    text-decoration: none;
+   }
+   #lsblog {
+    text-decoration: none;
+   }
+ </style>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" heigth="300">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -75,7 +67,7 @@
               <i class="fas fa-puzzle-piece"></i>
             </span>
             <div class="desc">
-              <h3><a href="#">Rekayasa Perangkat Lunak</a></h3>
+              <h3><a id="rpl" href="#">Rekayasa Perangkat Lunak</a></h3>
               <p>Siap Bekerja Di Bidang Web Development, IT Support, Staf Perkantoran, Software Developmnet, UI/UX Designer.</p>
             </div>
           </div>
@@ -87,7 +79,7 @@
               <i class="fas fa-camera"></i>
             </span>
             <div class="desc">
-              <h3><a href="#">Multimedia</a></h3>
+              <h3><a id="mm" class="bacaan" href="#">Multimedia</a></h3>
               <p>Siap Bekerja Sebagai Video Creator, Content Creator, Fotografer, Desainer Grafis, Jurukamera.</p>
             </div>
           </div>
@@ -147,9 +139,9 @@
                 </a>
               <% end %>
               <div class="desc">
-                <h3><a href="#"><%= artikel.judul %></a></h3>
-                <p><%= artikel.content %></p>
-                <span><a href="/artikels/<%= artikel.id %>" class="btn btn-primary btn-sm btn-course">Baca Selengkapnya</a></span>
+                <h3><a id="judul" href="#"><%= artikel.judul %></a></h3>
+                <p><%= artikel.isi %></p>
+                <span><a id="art" href="/artikels/<%= artikel.id %>" class="btn btn-primary btn-sm btn-course">Baca Selengkapnya</a></span>
               </div>
             </div>
           </div>
@@ -221,7 +213,7 @@
             <div class="fh5co-blog animate-box">
               <a href="/blogs/<%= blog.id %>" class="blog-img-holder" style="background-image: url(<%= url_for(blog.banner) %>);"></a>
               <div class="blog-text">
-                <h3><a href="/blogs/<%= blog.id %>"><%= blog.judul %></a></h3>
+                <h3><a id="lsblog" href="/blogs/<%= blog.id %>"><%= blog.judul %></a></h3>
                 <span class="posted_on"><%= blog.created_at.to_date %></span>
                 <span class="comment"><a href="#"><i class="fas fa-star" style="color: yellow;"></i></a></span>
                 <p><%= truncate(strip_tags(blog.rich_text_content.to_s), length: 150) %>.</p>
@@ -242,7 +234,7 @@
           <h2>Pendaftaran Siswa Baru</h2>
           <div class="simply-countdown simply-countdown-one"></div>
           <p><strong>Siswa Berprestasi Akan Mendapatkan Potongan Biaya</strong></p>
-          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdKTuO56dH_moo1x2lYSXLCnuq36LQGWYT9-bSAI7EPZiVM1g/viewform" class="btn btn-primary btn-lg btn-reg">Daftar Sekarang!</a></p>
+          <p><a id="tmbl-daftar" href="https://docs.google.com/forms/d/e/1FAIpQLSdKTuO56dH_moo1x2lYSXLCnuq36LQGWYT9-bSAI7EPZiVM1g/viewform" class="btn btn-primary btn-lg btn-reg">Daftar Sekarang!</a></p>
         </div>
       </div>
     </div>
@@ -270,6 +262,7 @@
 
 
   </div>
+
 
   <!-- <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>

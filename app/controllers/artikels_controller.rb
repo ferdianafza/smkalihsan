@@ -5,7 +5,7 @@ class ArtikelsController < ApplicationController
   # GET /artikels
   # GET /artikels.json
   def index
-    @artikels = Artikel.all
+    @artikels = Artikel.all.order(created_at: :desc).page params[:page]
   end
 
   # GET /artikels/1
@@ -70,6 +70,6 @@ class ArtikelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def artikel_params
-      params.require(:artikel).permit(:judul, :thumbnail, :content)
+      params.require(:artikel).permit(:judul, :thumbnail, :isi)
     end
 end

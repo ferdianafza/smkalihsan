@@ -1,32 +1,87 @@
 <style>
-  @media only screen and (max-device-width: 480px) {
-    .banner {
-      width: 100%;
-    }
-  }
-  .banner {
-    width: 100%;
-  }
+    h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+}
+
+h1{
+  font-size: 36px;
+  color:#fff;
+}
+
+h2{
+  font-size: 20px;
+}
+
+h3{
+  font-size: 16px;
+  color: #787878;
+  font-weight: 400;
+  line-height: 24px;
+}
 </style>
-<p id="notice"><%= notice %></p>
+<section id="blog" class="container">
+<div class="center">
+<!-- <h2>Blogs</h2> -->
+<!-- <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada</p> -->
+</div>
+<div class="blog">
+<div class="row">
+<div class="col-md-8">
+<div class="blog-item">
+<div class="row">
+<div class="col-xs-12 col-sm-2 text-center">
+<div class="entry-meta">
+<span id="publish_date"><%= @artikel.created_at.to_date %></span>
+<!-- <span><i class="fa fa-user"></i> <a href="#">SMK AL-IHSAN BATUJAJAR</a></span> -->
+<!-- <span><i class="fa fa-comment"></i> <a href="blog-item.html#comments">2 Comments</a></span> -->
+<!-- <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span> -->
+</div>
+</div>
+<div class="col-xs-12 col-sm-10 blog-content">
+<a href="#"><img class="img-responsive img-blog" src="<%= url_for(@artikel.thumbnail)  %>" width="100%" alt="" /></a>
+<h2><a href="#"><%= @artikel.judul %></a></h2>
+<h3><%= @artikel.isi %>.</h3>
+</div>
+</div>
+</div>
 
-<p>
-  <% if @artikel.thumbnail.attached? %>
-    <img class="banner" src="<%= url_for(@artikel.thumbnail)  %>" >
-  <% end %>
-</p>
+</div>
+<aside class="col-md-4">
 
-<p>
-  <h3>
-    <strong>
-      <%= @artikel.judul %>
-    </strong>
-  </h3>
-</p>
-
-<p>
-  <h4>
-
-  <%= @artikel.content %>
-  </h4>
-</p>
+<div class="widget categories">
+<h3>Blog Lainya</h3>
+<div class="row">
+<div class="col-sm-6">
+<ul class="blog_category">
+  <% Blog.all.each do |bl| %>
+  <li><a href="/blogs/<%= bl.id %>"><%= bl.judul.to_s %></a></li>
+  <%- end -%>
+</ul>
+</div>
+</div>
+</div>
+<div class="widget archieve">
+<h3>Artikel</h3>
+<div class="row">
+<div class="col-sm-12">
+<ul class="blog_archieve">
+  <% Artikel.all.each do |ar| %>
+    <li><a href="/artikels/<%= ar.id %>"><i class="fa fa-angle-double-right"></i> <%= ar.judul.to_s %></a></li>
+    <% end %>
+</ul>
+</div>
+</div>
+</div>
+<div class="widget blog_gallery">
+</div>
+</aside>
+</div>
+</div>
+</section>

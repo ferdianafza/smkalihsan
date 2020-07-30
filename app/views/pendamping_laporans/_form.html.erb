@@ -1,0 +1,22 @@
+<%= form_with(model: pendamping_laporan, local: true) do |form| %>
+  <% if pendamping_laporan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pendamping_laporan.errors.count, "error") %> prohibited this pendamping_laporan from being saved:</h2>
+
+      <ul>
+        <% pendamping_laporan.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

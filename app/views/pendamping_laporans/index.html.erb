@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pendamping Laporans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pendamping_laporans.each do |pendamping_laporan| %>
+      <tr>
+        <td><%= pendamping_laporan.name %></td>
+        <td><%= link_to 'Show', pendamping_laporan %></td>
+        <td><%= link_to 'Edit', edit_pendamping_laporan_path(pendamping_laporan) %></td>
+        <td><%= link_to 'Destroy', pendamping_laporan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pendamping Laporan', new_pendamping_laporan_path %>

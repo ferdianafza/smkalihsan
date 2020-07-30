@@ -10,6 +10,12 @@ require("channels")
 
 require("trix")
 require("@rails/actiontext")
+require("chartkick")
+require("chart.js")
+//= require chartkick
+//= require Chart.bundle
+
+
 //= require home
 //= require simulator
 //= require_tree .

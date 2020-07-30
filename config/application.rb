@@ -11,7 +11,7 @@ module Smk
     # Initialize configuration defaults for originally generated Rails version.
     config.assets.initialize_on_precompile = true
     config.load_defaults 6.0
-    config.time_zone =  "Asia/Jakarta"
+    # config.time_zone =  "Asia/Jakarta"
     config.autoload = :classic
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

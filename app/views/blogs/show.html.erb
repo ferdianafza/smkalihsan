@@ -13,7 +13,34 @@
 <p>
   <%= @blog.content %>
 </p> -->
+<style>
+    h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color:#4e4e4e;
+}
 
+h1{
+  font-size: 36px;
+  color:#fff;
+}
+
+h2{
+  font-size: 20px;
+}
+
+h3{
+  font-size: 16px;
+  color: #787878;
+  font-weight: 400;
+  line-height: 24px;
+}
+</style>
 <section id="blog" class="container">
 <div class="center">
 <!-- <h2>Blogs</h2> -->
@@ -42,46 +69,14 @@
 
 </div>
 <aside class="col-md-4">
-<div class="widget search">
-<form role="form">
-<input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
-</form>
-</div>
-<!-- <div class="widget categories">
-<h3>Recent Comments</h3>
-<div class="row">
-<div class="col-sm-12">
-<div class="single_comments">
-<img src="images/blog/avatar3.png" alt="" />
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>
-<div class="entry-meta small muted">
-<span>By <a href="#">Alex</a></span <span>On <a href="#">Creative</a></span>
-</div>
-</div>
-<div class="single_comments">
-<img src="images/blog/avatar3.png" alt="" />
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>
-<div class="entry-meta small muted">
-<span>By <a href="#">Alex</a></span <span>On <a href="#">Creative</a></span>
-</div>
-</div>
-<div class="single_comments">
-<img src="images/blog/avatar3.png" alt="" />
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do </p>
-<div class="entry-meta small muted">
-<span>By <a href="#">Alex</a></span <span>On <a href="#">Creative</a></span>
-</div>
-</div>
-</div>
-</div>
-</div> -->
+
 <div class="widget categories">
 <h3>Blog Lainya</h3>
 <div class="row">
 <div class="col-sm-6">
 <ul class="blog_category">
   <% @blogs.each do |bl| %>
-  <li><a href="/blogs/<%= bl.id %>"><%= bl.judul.to_s %> <span class="badge">04</span></a></li>
+  <li><a href="/blogs/<%= bl.id %>"><%= bl.judul.to_s %></a></li>
   <%- end -%>
 </ul>
 </div>
@@ -92,10 +87,9 @@
 <div class="row">
 <div class="col-sm-12">
 <ul class="blog_archieve">
-<li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
-<li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
-<li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
-<li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+  <% Artikel.all.each do |ar| %>
+    <li><a href="/artikels/<%= ar.id %>"><i class="fa fa-angle-double-right"></i> <%= ar.judul.to_s %></a></li>
+    <% end %>
 </ul>
 </div>
 </div>

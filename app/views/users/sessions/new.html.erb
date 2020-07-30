@@ -1,26 +1,61 @@
-<h2>Log in</h2>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style >
+  .input100 {
+    width: 100%;
+  }
+</style>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),  html: {class: 'login100-form validate-form' }) do |f| %>
+          <span class="login100-form-title p-b-26">
+            <img src="<%= asset_path 'logo.png' %>" style="width: 50%;height: 50%;" ><br>
+            Login
+            <p>
+            <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+            <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+            <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+            </p>
+          </span>
+          <span class="login100-form-title p-b-48">
+            <i class="zmdi zmdi-font"></i>
+          </span>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <!-- <div class="" data-validate = "Valid email is: a@b.c">
+            <input class="input100" type="text" name="email">
+            <span class="focus-input100" data-placeholder="Email"></span>
+          </div> -->
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <div class="wrap-input100 validate-input">
+            <%= f.email_field :email, class: 'input100', placeholder: 'Email'%>
+          </div>
+
+          <div class="wrap-input100 validate-input">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, class: 'input100', autocomplete: "new-password", placeholder: 'Password' %>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <div class="actions">
+                <%= f.submit "Sign in", :class => 'login100-form-btn signup'%>
+            </div>
+            </div>
+          </div>
+
+          <div class="text-center p-t-115">
+            <span class="txt1">
+              Belum Punya Akun?
+            </span>
+
+            <a class="txt2" href="/users/sign_up">
+              Sign up
+            </a>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
