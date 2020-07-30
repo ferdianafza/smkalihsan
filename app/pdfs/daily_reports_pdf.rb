@@ -33,13 +33,15 @@ require 'uri'
                                       :align => :center,
                                       :size => 18,
                                       :styles => [:bold]
-    text "Nama: #{@daily_reports.map do |report|
-      User.find(report.user_id).firstname
-    end} Kelas: #{@daily_reports.map do |report|
-      report.major.name
-    end} Pendamping Laporan: #{@daily_reports.map do |report|
-      report.pendamping_laporan.name
-    end} "
+    image "#{Rails.root}/app/assets/images/logo.png",
+                                      :align => :center,
+                                      # :at => [50,50],
+                                      :width => 150,
+                                      fit: [200, 200],
+                                      position: :center,
+                                      position: :center
+    move_down 20
+    text "Nama: #{@daily_reports.first.user.firstname + @daily_reports.first.user.lastname} Kelas: #{@daily_reports.first.major.name} Pendamping Laporan: #{@daily_reports.first.pendamping_laporan.name} "
 
 
 
